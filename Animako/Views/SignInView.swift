@@ -119,23 +119,6 @@ struct SignInView: View {
                                         } else {
                                             playbackMode = .playing(.fromFrame(0, toFrame: self.showPwd ? 10 : 5, loopMode: .playOnce))
                                         }
-    
-                                        // Maybe, we can use the same for password textfield
-//                                        if !animateEyes {
-//                                            let direction = new.count - old.count
-//                                            if direction > 0 && new.count == 10 {
-//                                                playbackMode = .playing(.fromFrame(10, toFrame: 25, loopMode: .playOnce))
-//                                            }
-//                                            if direction > 0 && new.count == 16 {
-//                                                playbackMode = .playing(.fromFrame(25, toFrame: 30, loopMode: .playOnce))
-//                                            }
-//                                            if direction < 0 && new.count == 12 {
-//                                                playbackMode = .playing(.fromFrame(30, toFrame: 25, loopMode: .playOnce))
-//                                            }
-//                                            if direction < 0 && new.count == 6 {
-//                                                playbackMode = .playing(.fromFrame(25, toFrame: 10, loopMode: .playOnce))
-//                                            }
-//                                        }
                                     }
                                 
                                 SecureField("Password", text: $password)
@@ -156,24 +139,6 @@ struct SignInView: View {
                                         } else {
                                             playbackMode = .playing(.fromFrame(0, toFrame: self.showPwd ? 10 : 5, loopMode: .playOnce))
                                         }
-                                        
-                                        // Maybe, we can use the same for password textfield
-//                                        if !animateEyes {
-//                                            let direction = new.count - old.count
-//                                            if direction > 0 && new.count == 10 {
-//                                                playbackMode = .playing(.fromFrame(10, toFrame: 25, loopMode: .playOnce))
-//                                            }
-//                                            if direction > 0 && new.count == 16 {
-//                                                playbackMode = .playing(.fromFrame(25, toFrame: 30, loopMode: .playOnce))
-//                                            }
-//                                            if direction < 0 && new.count == 12 {
-//                                                playbackMode = .playing(.fromFrame(30, toFrame: 25, loopMode: .playOnce))
-//                                            }
-//                                            if direction < 0 && new.count == 6 {
-//                                                playbackMode = .playing(.fromFrame(25, toFrame: 10, loopMode: .playOnce))
-//                                            }
-//                                        }
-                                    }
                             }
                             
                             Image(systemName: showPwd ? "eye.slash" : "eye")
@@ -234,9 +199,6 @@ struct SignInView: View {
                 }
             }
             .padding()
-        }
-        .onAppear {
-            UITextField.appearance().overrideUserInterfaceStyle = .light
         }
     }
     
