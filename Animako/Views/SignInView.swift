@@ -41,11 +41,11 @@ struct SignInView: View {
                 ZStack {
                     
                     VStack {}
-                    .frame(width: 260, height: 196)
-                    .background(Color.black.opacity(0.4))
-                    .cornerRadius(16.0)
-                    .shadow(color: Color.black.opacity(0.25), radius: 2, x: 0, y: 2)
-                    .offset(x: 0, y: 152)
+                        .frame(width: 260, height: 196)
+                        .background(Color.black.opacity(0.4))
+                        .cornerRadius(16.0)
+                        .shadow(color: Color.black.opacity(0.25), radius: 2, x: 0, y: 2)
+                        .offset(x: 0, y: 152)
                     
                     LottieView(animation: .named("full"))
                         .playbackMode(playbackMode)
@@ -56,10 +56,11 @@ struct SignInView: View {
                         
                         TextField("Email", text: $email)
                             .frame(height: 44)
+                            .foregroundStyle(Color("FG_TextField"))
                             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                             .font(.subheadline)
                             .fontWeight(.bold)
-                            .background(Color.white)
+                            .background(Color("BG_TextField"))
                             .cornerRadius(8.0)
                             .shadow(color: Color.black.opacity(0.25), radius: 2, x: 0, y: 2)
                             .keyboardType(.emailAddress)
@@ -103,6 +104,7 @@ struct SignInView: View {
                                 
                                 TextField("Password", text: $password)
                                     .frame(height: 44)
+                                    .foregroundStyle(Color("FG_TextField"))
                                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
                                     .font(.subheadline)
                                     .fontWeight(.bold)
@@ -186,7 +188,7 @@ struct SignInView: View {
                                 }
                         }
                         .frame(height: 44)
-                        .background(Color.white)
+                        .background(Color("BG_TextField"))
                         .cornerRadius(8.0)
                         .shadow(color: Color.black.opacity(0.25), radius: 2, x: 0, y: 2)
                         .padding(.horizontal)
@@ -232,6 +234,9 @@ struct SignInView: View {
                 }
             }
             .padding()
+        }
+        .onAppear {
+            UITextField.appearance().overrideUserInterfaceStyle = .light
         }
     }
     
